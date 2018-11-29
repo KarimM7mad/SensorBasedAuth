@@ -29,4 +29,30 @@
         tools:layout_editor_absoluteX="173dp"
         tools:layout_editor_absoluteY="246dp" />
 
+    <TextView
+        android:id="@+id/sensorReadings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp" />
+
+    <Button
+        android:id="@+id/startTimerbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="117dp"
+        android:layout_toStartOf="@+id/msgTxt"
+        android:text="startTimer" />
+
+    <Button
+        android:id="@+id/stopTimerbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/startTimerbtn"
+        android:layout_toEndOf="@+id/msgTxt"
+        android:text="Stop Timer" />
+
+
 </RelativeLayout>
