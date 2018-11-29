@@ -23,26 +23,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensMan;
     private Sensor linSensor;
     public int numOfShakesInInterval;
-
-    public final float minThresholdX = 20;
-    public final float minThresholdY = 20;
-
-    public final float maxThresholdX = 50;
-    public final float maxThresholdY = 30;
-
-    //data for sensor changes
-    public float diffX = 0;
-    public float diffY = 0;
-    public long prevTimeStamp;
-
-    public float prevX = 0;
-    public float prevY = 0;
-
-
-
     // variables for shake detection
     private static final float SHAKE_THRESHOLD = 3.25f; // m/S**2
-    private static final int MIN_TIME_BETWEEN_SHAKES_MILLISECS = 600;
+    private static final int MIN_TIME_BETWEEN_SHAKES_MILLISECS = 550;
     private long mLastShakeTime;
 
 
@@ -92,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 Log.d("asdasd", "debugyAna: Seconds Remaining->" + (millisUntilFinished / 1000));
 //                Log.d("asdasd", "debugyAna: NumOfShakes->" + numOfShakesInInterval);
 
-                msgTxt.append(numOfShakesInInterval+"-");
+                msgTxt.append(numOfShakesInInterval + "-");
 
                 numOfShakesInInterval = 0;
             }
@@ -102,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 Log.d("asdasd", "debugyAna: Timer is Finished");
 
 
-                msgTxt.append(numOfShakesInInterval+"-");
+                msgTxt.append(numOfShakesInInterval + "-");
 
                 numOfShakesInInterval = 0;
             }
@@ -123,31 +106,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-//        if (event.sensor.getType() != Sensor.TYPE_LINEAR_ACCELERATION)
-//            return;
-//
-//        if((event.timestamp - prevTimeStamp) < 100)
-//            return;
-//
-//
-////        Log.d("asdasd", "debugyAna:: x=" + event.values[0] + " y=" + event.values[1] + " z=" + event.values[2]);
-//        sensorReadingTxt.setText("x=" + event.values[0] + " y=" + event.values[1] + " z=" + event.values[2]);
-//        diffX = Math.abs(event.values[0] - prevX);
-//        diffY = Math.abs(event.values[1] - prevY);
-//        debugTxt.setText("x=" + diffX + " y=" + diffY);
-//        if (diffX >= minThresholdX &&
-//                diffX <= maxThresholdX &&
-//                diffY >= minThresholdY &&
-//                diffY <= maxThresholdY) {
-//            numOfShakesInInterval += 1;
-//            Log.d("asdasd", "debugyAna:: x=" + diffX + " y=" + diffY);
-//            Log.d("asdasd", "debugyAna: shakes:"+numOfShakesInInterval);
-//        }
-//        this.prevX = event.values[0];
-//        this.prevY = event.values[1];
-//        this.prevTimeStamp = event.timestamp;
-
-
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             long curTime = System.currentTimeMillis();
             if ((curTime - mLastShakeTime) > MIN_TIME_BETWEEN_SHAKES_MILLISECS) {
@@ -156,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 float y = event.values[1];
                 float z = event.values[2];
 
-                double acceleration = Math.sqrt(Math.pow(x, 2) +Math.pow(y, 2) +Math.pow(z, 2)) - SensorManager.GRAVITY_EARTH;
+                double acceleration = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2)) - SensorManager.GRAVITY_EARTH;
 //                Log.d("asdasd", "Acceleration is " + acceleration + "m/s^2");
 
                 if (acceleration > SHAKE_THRESHOLD) {
