@@ -9,14 +9,13 @@
     <TextView
         android:id="@+id/msgTxt"
         android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="121dp"
+        android:background="@color/green"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/debugTxt"
@@ -24,10 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="83dp"
-        android:text="debug"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="246dp" />
+        android:layout_marginTop="242dp"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/sensorReadings"
@@ -42,17 +39,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="117dp"
-        android:layout_toStartOf="@+id/msgTxt"
-        android:text="startTimer" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="164dp"
+        android:text="Start Timer"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/stopTimerbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/startTimerbtn"
-        android:layout_toEndOf="@+id/msgTxt"
-        android:text="Stop Timer" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="88dp"
+        android:text="Stop Timer"
+        android:textAllCaps="false" />
 
+    <ProgressBar
+        android:id="@+id/determinateBar"
+        style="@android:style/Widget.Material.ProgressBar.Horizontal"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:progress="25" />
 
 </RelativeLayout>
