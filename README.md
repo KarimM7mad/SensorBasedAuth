@@ -1,1 +1,1 @@
-![alt text](https://github.com/KarimM7mad/SensorBasedAuth/description.png)
+![alt text](https://github.com/KarimM7mad/SensorBasedAuth/blob/master/description.png)
